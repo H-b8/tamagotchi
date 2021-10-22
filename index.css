@@ -7,6 +7,7 @@ body {
 	/* background-image: url(./stars.gif); */
 	/* background: black; */
 }
+
 .tamagotchi-device {
 	width: 360px;
 	height: 480px;
@@ -31,11 +32,21 @@ header {
 }
 
 .screen {
-	width: 60%;
-	height: 45%;
+	padding: 20px;
+	width: 50%;
+	height: 40%;
 	background: #aecde0;
 	border-radius: 10px;
 	margin: 10px 0 30px 0;
+	display: flex;
+	align-items: flex-end; /*  puts pet at bottom of screen */
+	/* add justify-content via js to move pet around */
+}
+
+.pet {
+	background: red;
+	width: 30%;
+	height: 30%;
 }
 
 .button-container {
