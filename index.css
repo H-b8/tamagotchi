@@ -1,0 +1,59 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	margin: 0;
+	/* background-image: url(./stars.gif); */
+	/* background: black; */
+}
+.tamagotchi-device {
+	width: 360px;
+	height: 480px;
+	background-color: #ffd700;
+	/* background: black; */
+	-webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+	border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+header {
+	font-family: sans-serif;
+	font-weight: 900;
+	/* color: #B30E08; */
+	color: white;
+	font-size: 1.7rem;
+	letter-spacing: 0.04em;
+	margin-top: 30px;
+}
+
+.screen {
+	width: 60%;
+	height: 45%;
+	background: #aecde0;
+	border-radius: 10px;
+	margin: 10px 0 30px 0;
+}
+
+.button-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 50%;
+	height: 10%;
+}
+
+button {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+}
+
+.middle-button {
+	align-self: flex-end;
+}
