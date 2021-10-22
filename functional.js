@@ -8,13 +8,13 @@ initialize();
 
 const feedButton = document.querySelector('#feed');
 const playButton = document.querySelector('#play');
-const napButton = document.querySelector('#nap');
+const sleepButton = document.querySelector('#sleep');
 
 /* * * * * * * * * * * EVENT LISTENERS * * * * * * * * * * * */
 
 feedButton.addEventListener('click', decHunger);
 playButton.addEventListener('click', decNeglect);
-napButton.addEventListener('click', decSleepiness);
+sleepButton.addEventListener('click', decSleepiness);
 
 /* * * * * * * * * * * * * FUNCTIONS * * * * * * * * * * * * */
 
@@ -27,12 +27,15 @@ function initialize() {
 
 function decHunger() {
     hunger -= 20;
+    console.log(hunger, neglect, sleepiness)
 };
 
 function decNeglect() {
     neglect -= 75;
+    console.log(hunger, neglect, sleepiness)
 };
 
 function decSleepiness() {
     sleepiness -= 50;
+    console.log(hunger, neglect, sleepiness)
 };

@@ -22,31 +22,68 @@ body {
 }
 
 header {
-	font-family: sans-serif;
-	font-weight: 900;
-	/* color: #B30E08; */
+	font-family: 'Syncopate', sans-serif;
 	color: white;
-	font-size: 1.7rem;
+	font-size: 0.75rem;
 	letter-spacing: 0.04em;
-	margin-top: 30px;
+	margin-top: 40px;
 }
 
 .screen {
 	padding: 20px;
 	width: 50%;
 	height: 40%;
-	background: #aecde0;
+	background: #bed4e2;
 	border-radius: 10px;
 	margin: 10px 0 30px 0;
+	border: 3px solid rgb(210, 0, 0);
 	display: flex;
 	align-items: flex-end; /*  puts pet at bottom of screen */
 	/* add justify-content via js to move pet around */
 }
 
+.center-pet {
+	justify-content: center;
+}
+
+.playing {
+	animation: playing 0.2s alternate infinite;
+	position: relative
+}
+
+@keyframes playing {
+	0% {
+		bottom: 10px;
+	}
+	100% {
+		bottom: 0px;
+	}
+}
+
+.pacing {
+	animation: pacing 3s alternate infinite;
+}
+
+@keyframes pacing {
+	0% {
+		justify-content: flex-start;
+	}
+	50% {
+		justify-content: center;
+	}
+	100% {
+		justify-content: flex-end;
+	}
+}
+
 .pet {
-	background: red;
 	width: 30%;
 	height: 30%;
+}
+
+.sleeping {
+	background-image: url(./sleeping.gif);
+	background-size: 100%;
 }
 
 .button-container {
@@ -63,6 +100,10 @@ button {
 	border-radius: 50%;
 	border: none;
 	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, 0.1);
 }
 
 .middle-button {
