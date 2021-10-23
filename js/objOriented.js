@@ -86,8 +86,6 @@ class Pet {
             }, 5000);
 
             this.updateStats();
-        } else {
-            console.log('not hungry!');
         };
     };
 
