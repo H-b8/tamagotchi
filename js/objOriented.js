@@ -60,14 +60,16 @@ class Pet {
         petContainer.classList.add('center-pet');
         petGraphic.classList.add('eating');
 
-        if (this.tummy < 100) {
-            console.log('feeding');
-            this.tummy += 30;
-            this.happiness += 10;
-        };
+        this.tummy += 30;
+        this.energy += 10;
+        this.happiness += Math.floor(Math.random() * 10);
 
+        this.checkTummy();
+    };
+
+    checkTummy() {
         if (this.tummy > 100) {
-            console.log('you overfed me');
+            console.log('you overfed me!');
             this.energy -= 60;
             this.happiness -= 30;
         };
@@ -75,7 +77,7 @@ class Pet {
         setTimeout(() => {
             petContainer.classList.remove('center-pet')
             petGraphic.classList.remove('eating');
-            petContainer.classList.add('pacing')
+            petContainer.classList.add('pacing');
             buttonContainer.classList.remove('disable-buttons');
         }, 5000);
 
