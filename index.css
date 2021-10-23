@@ -11,17 +11,17 @@
 }
 
 body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
 	margin: 0;
+	min-height: 100vh;
 	background-color: rgb(255, 225, 234);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .tamagotchi-device {
-	width: 360px;
 	height: 480px;
+	width: 360px;
 	border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
 	display: flex;
 	flex-direction: column;
@@ -33,27 +33,28 @@ body {
 }
 
 header {
-	font-size: 0.95rem;
-	letter-spacing: 0.04em;
 	margin-top: 40px;
 	text-align: center;
+	font-size: 0.95rem;
+	letter-spacing: 0.04em;
 }
 
 .screen {
-	font-family: VCR-Mono;
-	padding: 10px;
-	width: 50%;
 	height: 40%;
-	background: #cfe4f1;
-	border-radius: 10px;
+	width: 50%;
+	overflow: hidden;
 	margin: 10px 0 30px 0;
 	border: 3px solid rgb(210, 0, 0);
+	border-radius: 10px;
+	padding: 10px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+	background: #cfe4f1;
+	color: #222;
+	font-family: VCR-Mono;
 	transition: 1s ease-in-out;
-	overflow: hidden;
 }
 
 p {
@@ -61,23 +62,23 @@ p {
 }
 
 .pet-container {
-	width: 100%;
 	height: 50%;
+	width: 100%;
 	display: flex;
 }
 
 .center-pet {
-	justify-content: center;
 	width: 100%;
+	justify-content: center;
 }
 
 .pet {
-	width: 40%;
 	height: 100%;
+	width: 40%;
+	margin: 0;
 	background-image: url('graphics/pacing.gif');
 	background-size: 100% 100%;
 	transition: 0s ease-in-out;
-	margin: 0;
 }
 
 .pacing {
@@ -97,10 +98,10 @@ p {
 }
 
 .playing {
-	animation: playing 0.2s alternate infinite;
 	position: relative;
 	background-image: url('graphics/dancing.gif');
 	background-size: 100% 100%;
+	animation: playing 0.2s alternate infinite;
 }
 
 @keyframes playing {
@@ -123,11 +124,11 @@ p {
 }
 
 .button-container {
+	height: 10%;
+	width: 50%;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-	width: 50%;
-	height: 10%;
 }
 
 .disable-buttons {
@@ -139,22 +140,22 @@ p {
 }
 
 button {
-	width: 30px;
 	height: 30px;
-	border-radius: 50%;
+	width: 30px;
+	box-shadow: 4px 4px 4px rgba(0, 0, 255, 0.1);
 	border: none;
-	cursor: pointer;
+	border-radius: 50%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	box-shadow: 4px 4px 4px rgba(0, 0, 255, 0.1);
 	background-color: rgb(108, 108, 255);
+	cursor: pointer;
 }
 
 .button-text {
-	display: none;
 	position: absolute;
 	margin-top: 7px;
+	display: none;
 	font-size: 0.7rem;
 }
 
