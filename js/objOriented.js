@@ -21,6 +21,14 @@ class Pet {
     };
 
     updateStats() {
+        if (this.happiness > 100) {
+            this.happiness = 100;
+        }
+
+        if (this.energy > 100) {
+            this.happiness = 100;
+        }
+
         happyStat.innerText = this.happiness;
         tummyStat.innerText = this.tummy;
         energyStat.innerText = this.energy;
@@ -32,7 +40,7 @@ class Pet {
         petContainer.classList.add('center-pet');
         petGraphic.classList.add('playing');
 
-        this.happiness += 20;
+        this.happiness += Math.floor(Math.random() * 50);
         this.energy -= 20;
         this.tummy -= 30;
 
@@ -80,9 +88,9 @@ class Pet {
         petContainer.classList.add('center-pet');
         petGraphic.classList.add('sleeping');
 
-        this.energy += 40;
-        this.happiness += 5;
-        this.tummy -= 20;
+        this.energy += Math.floor(Math.random() * 40);
+        this.happiness += Math.floor(Math.random() * 10);
+        this.tummy -= Math.floor(Math.random() * 20);
 
         setTimeout(() => {
             petContainer.classList.remove('center-pet');
