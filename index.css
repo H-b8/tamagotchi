@@ -33,7 +33,7 @@ body {
 header {
 	font-family: 'Syncopate', sans-serif;
 	color: rgb(70, 152, 206);
-	font-size: 0.9rem;
+	font-size: 0.95rem;
 	letter-spacing: 0.04em;
 	margin-top: 40px;
 	text-align: center;
@@ -155,9 +155,5 @@ button {
     body {
 		min-height: 0;
 		padding-top: 30%;
-	}
-
-	header {
-		font-size: 1rem;
 	}
 }
