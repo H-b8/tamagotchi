@@ -21,7 +21,8 @@ body {
 
 @media all and (max-width: 800px) {
     body {
-		min-height: 90vh;
+		min-height: 0;
+		padding-top: 30%;
 	}
 }
 
