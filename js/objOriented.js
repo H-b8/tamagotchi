@@ -9,6 +9,7 @@ const petContainer = document.querySelector('.pet-container');
 const petGraphic = document.querySelector('.pet');
 const buttonContainer = document.querySelector('.button-container');
 const feedButton = document.querySelector('#feed');
+const feedText = document.querySelector('#feed-text');
 const playButton = document.querySelector('#play');
 const sleepButton = document.querySelector('#sleep');
 
@@ -27,6 +28,12 @@ class Pet {
 
         if (this.energy > 100) {
             this.happiness = 100;
+        }
+
+        if (this.tummy > 99) {
+            feedText.innerHTML = '<span style="margin-left: -5px">NO THX</span>';
+        } else {
+            feedText.innerText = 'FEED';
         }
 
         happyStat.innerText = this.happiness;
@@ -55,33 +62,33 @@ class Pet {
     };
 
     feed() {
-        buttonContainer.classList.add('disable-buttons');
-        petContainer.classList.remove('pacing');
-        petContainer.classList.add('center-pet');
-        petGraphic.classList.add('eating');
+        if (this.tummy < 100) {
+            buttonContainer.classList.add('disable-buttons');
+            petContainer.classList.remove('pacing');
+            petContainer.classList.add('center-pet');
+            petGraphic.classList.add('eating');
 
-        this.tummy += 30;
-        this.energy += 10;
-        this.happiness += Math.floor(Math.random() * 10);
+            this.tummy += 30;
+            this.energy += 10;
+            this.happiness += Math.floor(Math.random() * 10);
 
-        this.checkTummy();
-    };
+            if (this.tummy > 100) {
+                console.log('you overfed me!');
+                this.energy -= 60;
+                this.happiness -= 30;
+            };
 
-    checkTummy() {
-        if (this.tummy > 100) {
-            console.log('you overfed me!');
-            this.energy -= 60;
-            this.happiness -= 30;
+            setTimeout(() => {
+                petContainer.classList.remove('center-pet')
+                petGraphic.classList.remove('eating');
+                petContainer.classList.add('pacing');
+                buttonContainer.classList.remove('disable-buttons');
+            }, 5000);
+
+            this.updateStats();
+        } else {
+            console.log('not hungry!');
         };
-
-        setTimeout(() => {
-            petContainer.classList.remove('center-pet')
-            petGraphic.classList.remove('eating');
-            petContainer.classList.add('pacing');
-            buttonContainer.classList.remove('disable-buttons');
-        }, 5000);
-
-        this.updateStats();
     };
 
     sleep() {

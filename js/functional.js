@@ -57,22 +57,24 @@ function play() {
 };
 
 function feed() {
-    buttonContainer.classList.add('disable-buttons');
-    petContainer.classList.remove('pacing');
-    petContainer.classList.add('center-pet');
-    petGraphic.classList.add('eating');
-
     if (tummy < 100) {
+        buttonContainer.classList.add('disable-buttons');
+        petContainer.classList.remove('pacing');
+        petContainer.classList.add('center-pet');
+        petGraphic.classList.add('eating');
+
         console.log('feeding');
         tummy += 30;
         happiness += 10;
-    };
 
-    if (tummy > 100) {
-        console.log('you overfed me');
-        energy -= 60;
-        happiness -= 30;
-    };
+        if (tummy > 100) {
+            console.log('you overfed me');
+            energy -= 60;
+            happiness -= 30;
+        };
+    } else {
+        console.log('not hungry!');
+    }
 
     setTimeout(() => {
         petContainer.classList.remove('center-pet')
