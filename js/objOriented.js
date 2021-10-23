@@ -31,7 +31,7 @@ class Pet {
         }
 
         if (this.tummy > 99) {
-            feedText.innerHTML = '<span style="margin-left: -5px">NO THX</span>';
+            feedText.innerText = '';
         } else {
             feedText.innerText = 'FEED';
         }
