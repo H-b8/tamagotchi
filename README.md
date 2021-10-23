@@ -8,3 +8,5 @@ Baites' take on the classic Tamagotchi keychain!
 - Feeding your pet will fill their tummies and make them happy, but overfeeding them will cause them to lose energy and become cranky
 - Playing with your pet will make them happy, but lower their energy and make them hungrier
 - Putting your pet to bed restores energy and happiness, but they will wake up hungrier
+
+### <a href="https://h-b8.github.io/tamagotchi">LAUNCH APPLICATION</a>
