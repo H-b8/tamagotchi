@@ -1,19 +1,27 @@
+@font-face {
+	src: url('fonts/VCR-Mono/VCR-Mono.eot');
+    src: url('fonts/VCR-Mono/VCR-Mono.eot?#iefix') format('embedded-opentype'),
+	url('fonts/VCR-Mono/VCR-Mono.woff2') format('woff2'),
+	url('fonts/VCR-Mono/VCR-Mono.woff') format('woff'),
+	url('fonts/VCR-Mono/VCR-Mono.ttf') format('truetype'),
+	url('fonts/VCR-Mono/VCR-Mono.svg#VCR-Mono') format('svg');
+    font-family: 'VCR-Mono';
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
 	margin: 0;
-	/* background-image: url(./stars.gif); */
-	/* background: black; */
 }
 
 .tamagotchi-device {
 	width: 360px;
 	height: 480px;
 	background-color: #ffd700;
-	/* background: black; */
-	-webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
 	border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
 	display: flex;
 	flex-direction: column;
@@ -24,12 +32,14 @@ body {
 header {
 	font-family: 'Syncopate', sans-serif;
 	color: rgb(70, 152, 206);
-	font-size: 0.7rem;
+	font-size: 0.9rem;
 	letter-spacing: 0.04em;
 	margin-top: 40px;
+	text-align: center;
 }
 
 .screen {
+	font-family: VCR-Mono;
 	padding: 20px;
 	width: 50%;
 	height: 40%;
@@ -38,21 +48,34 @@ header {
 	margin: 10px 0 30px 0;
 	border: 3px solid rgb(210, 0, 0);
 	display: flex;
-	align-items: flex-end; /*  puts pet at bottom of screen */
-	/* add justify-content via js to move pet around */
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
 	transition: 1s ease-in-out;
+}
+
+p {
+	margin: 0;
+}
+
+.pet-container {
+	width: 100%;
+	height: 32%;
+	display: flex;
 }
 
 .center-pet {
 	justify-content: center;
+	width: 100%;
 }
 
 .pet {
 	width: 30%;
-	height: 30%;
-	background-image: url('./pacing.gif');
-	background-size: 100%;
+	height: 100%;
+	background-image: url('graphics/pacing.gif');
+	background-size: 100% 100%;
 	transition: 0s ease-in-out;
+	margin: 0;
 }
 
 .pacing {
@@ -62,22 +85,20 @@ header {
 @keyframes pacing {
 	0% {
 		justify-content: flex-start;
-		/* transform: translateX(0px); */
 	}
 	50% {
 		justify-content: center;
 	}
 	100% {
 		justify-content: flex-end;
-		/* transform: translateX(130px); */
 	}
 }
 
 .playing {
 	animation: playing 0.2s alternate infinite;
 	position: relative;
-	background-image: url('./dancing.gif');
-	background-size: 100%;
+	background-image: url('graphics/dancing.gif');
+	background-size: 100% 100%;
 }
 
 @keyframes playing {
@@ -90,8 +111,8 @@ header {
 }
 
 .sleeping {
-	background-image: url(./sleeping.gif);
-	background-size: 100%;
+	background-image: url('graphics/sleeping.gif');
+	background-size: 100% 100%;
 }
 
 .button-container {
@@ -115,7 +136,7 @@ button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, 0.1);
+	box-shadow: 2px 2px 2px rgba(0, 0, 255, 0.1);
 }
 
 .middle-button {

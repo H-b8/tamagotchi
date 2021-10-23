@@ -1,30 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GEFY APP</title>
+    <title>MY GEY FRIEND</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <!-- <script defer src="functional.js"></script> -->
-    <script defer src="objOriented.js"></script>
+    <script defer src="js/objOriented.js"></script>
+    <script defer src="js/clock.js"></script>
 </head>
+
 <body>
     <main class="tamagotchi-device">
-        <header>GENERIC EGG FRIEND YOLK</header>
+        <header>MY GENERIC<br /> EGG YOLK FRIEND</header>
 
-        <section class="screen pacing">
-            <div class="pet"></div>
+        <section class="screen">
+            <marquee>
+                <p>
+                    <span id="clock" onload="showTime()"></span>
+                    <span> - HAPPY: </span><span id="happy"></span>
+                    <span> - TUMMY: </span><span id="tummy"></span>
+                    <span> - ENERGY: </span><span id="energy"></span>
+                </p>
+            </marquee>
+            <div class="pet-container pacing">
+                <div class="pet"></div>
+            </div>
         </section>
 
         <section class="button-container">
-            <button id="feed"></button>    
-            <button id="play" class="middle-button"></button>    
-            <button id="sleep"></button>    
+            <button id="feed"></button>
+            <button id="play" class="middle-button"></button>
+            <button id="sleep"></button>
         </section>
     </main>
 </body>
+
 </html>

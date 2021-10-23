@@ -2,19 +2,28 @@ console.log('obj oriented js connected');
 
 /* * * * * * * * * CACHED ELEMENT REFERENCES * * * * * * * * */
 
+const happyStat = document.querySelector('#happy');
+const tummyStat = document.querySelector('#tummy');
+const energyStat = document.querySelector('#energy');
+const petContainer = document.querySelector('.pet-container');
+const petGraphic = document.querySelector('.pet');
+const buttonContainer = document.querySelector('.button-container');
 const feedButton = document.querySelector('#feed');
 const playButton = document.querySelector('#play');
 const sleepButton = document.querySelector('#sleep');
-const screen = document.querySelector('.screen');
-const petContainer = document.querySelector('.pet');
-const buttonContainer = document.querySelector('.button-container');
 
 /* * * * * * * * * * * CLASS * * * * * * * * * * * */
 class Pet {
     constructor() {
-        this.tummy = Math.floor(Math.random() * 100);
         this.happiness = Math.floor(Math.random() * 100);
+        this.tummy = Math.floor(Math.random() * 100);
         this.energy = Math.floor(Math.random() * 100);
+    }
+
+    updateStats() {
+        happyStat.innerText = this.happiness;
+        tummyStat.innerText = this.tummy;
+        energyStat.innerText = this.energy;
     }
 
     feed() {
@@ -30,6 +39,7 @@ class Pet {
             this.happiness -= 30;
         }
 
+        this.updateStats();
         console.log(pet)
     }
 
@@ -37,21 +47,22 @@ class Pet {
         console.log('playing')
 
         buttonContainer.classList.add('disable-buttons');
-        screen.classList.remove('pacing')
-        screen.classList.add('center-pet')
-        petContainer.classList.add('playing')
+        petContainer.classList.remove('pacing')
+        petContainer.classList.add('center-pet')
+        petGraphic.classList.add('playing')
 
         this.happiness += 20;
         this.energy -= 20;
         this.tummy -= 30;
 
         setTimeout(() => {
-            screen.classList.remove('center-pet')
-            petContainer.classList.remove('playing');
-            screen.classList.add('pacing')
+            petContainer.classList.remove('center-pet')
+            petGraphic.classList.remove('playing');
+            petContainer.classList.add('pacing')
             buttonContainer.classList.remove('disable-buttons');
         }, 10000)
 
+        this.updateStats();
         console.log(pet)
     }
 
@@ -59,26 +70,28 @@ class Pet {
         console.log('sleeping')
 
         buttonContainer.classList.add('disable-buttons');
-        screen.classList.remove('pacing')
-        screen.classList.add('center-pet')
-        petContainer.classList.add('sleeping')
+        petContainer.classList.remove('pacing')
+        petContainer.classList.add('center-pet')
+        petGraphic.classList.add('sleeping')
 
         this.energy += 40;
         this.happiness += 5;
         this.tummy -= 20;
 
         setTimeout(() => {
-            screen.classList.remove('center-pet')
-            petContainer.classList.remove('sleeping');
-            screen.classList.add('pacing');
+            petContainer.classList.remove('center-pet')
+            petGraphic.classList.remove('sleeping');
+            petContainer.classList.add('pacing');
             buttonContainer.classList.remove('disable-buttons');
         }, 9000)
 
+        this.updateStats();
         console.log(pet)
     }
 }
 
 const pet = new Pet();
+pet.updateStats();
 
 /* * * * * * * * * * * EVENT LISTENERS * * * * * * * * * * * */
 
