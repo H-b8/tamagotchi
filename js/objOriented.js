@@ -2,11 +2,14 @@ console.log('obj oriented js connected');
 
 /* * * * * * * * * CACHED ELEMENT REFERENCES * * * * * * * * */
 
+const time = document.querySelector('#clock')
 const happyStat = document.querySelector('#happy');
 const tummyStat = document.querySelector('#tummy');
 const energyStat = document.querySelector('#energy');
+
 const petContainer = document.querySelector('.pet-container');
 const petGraphic = document.querySelector('.pet');
+
 const buttonContainer = document.querySelector('.button-container');
 const feedButton = document.querySelector('#feed');
 const feedText = document.querySelector('#feed-text');
@@ -27,7 +30,7 @@ class Pet {
         }
 
         if (this.energy > 100) {
-            this.happiness = 100;
+            this.energy = 100;
         }
 
         if (this.tummy > 99) {
