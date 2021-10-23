@@ -48,7 +48,9 @@ header {
 
 .playing {
 	animation: playing 0.2s alternate infinite;
-	position: relative
+	position: relative;
+	background-image: url('./dancing.gif');
+	background-size: 100%;
 }
 
 @keyframes playing {
@@ -92,6 +94,10 @@ header {
 	align-items: flex-start;
 	width: 50%;
 	height: 10%;
+}
+
+.disable-buttons {
+	pointer-events: none;
 }
 
 button {

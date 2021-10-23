@@ -6,7 +6,8 @@ const feedButton = document.querySelector('#feed');
 const playButton = document.querySelector('#play');
 const sleepButton = document.querySelector('#sleep');
 const screen = document.querySelector('.screen');
-const petContainer = document.querySelector('.pet')
+const petContainer = document.querySelector('.pet');
+const buttonContainer = document.querySelector('.button-container');
 
 /* * * * * * * * * * * CLASS * * * * * * * * * * * */
 class Pet {
@@ -36,6 +37,8 @@ class Pet {
 
     play() {
         console.log('playing')
+
+        buttonContainer.classList.add('disable-buttons');
         screen.classList.remove('pacing')
         screen.classList.add('center-pet')
         petContainer.classList.add('playing')
@@ -48,14 +51,15 @@ class Pet {
             screen.classList.remove('center-pet')
             petContainer.classList.remove('playing');
             screen.classList.add('pacing')
-        }, 3000)
+            buttonContainer.classList.remove('disable-buttons');
+        }, 10000)
 
         console.log(pet)
     }
 
     sleep() {
         console.log('sleeping')
-        
+
         screen.classList.remove('pacing')
         screen.classList.add('center-pet')
         petContainer.classList.add('sleeping')
