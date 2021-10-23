@@ -13,7 +13,7 @@
 body {
 	margin: 0;
 	min-height: 100vh;
-	background-color: rgb(255, 225, 234);
+	background-color: rgb(255, 231, 238);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -23,7 +23,7 @@ body {
 	border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
 	height: 480px;
 	width: 360px;
-	background-color: #ffd700;
+	background-color: #ffde23;
 	color: rgb(70, 152, 206);
 	font-family: 'Syncopate', sans-serif;
 	display: flex;
