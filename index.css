@@ -23,8 +23,8 @@ body {
 
 header {
 	font-family: 'Syncopate', sans-serif;
-	color: white;
-	font-size: 0.75rem;
+	color: rgb(70, 152, 206);
+	font-size: 0.7rem;
 	letter-spacing: 0.04em;
 	margin-top: 40px;
 }
@@ -40,10 +40,37 @@ header {
 	display: flex;
 	align-items: flex-end; /*  puts pet at bottom of screen */
 	/* add justify-content via js to move pet around */
+	transition: 1s ease-in-out;
 }
 
 .center-pet {
 	justify-content: center;
+}
+
+.pet {
+	width: 30%;
+	height: 30%;
+	background-image: url('./pacing.gif');
+	background-size: 100%;
+	transition: 0s ease-in-out;
+}
+
+.pacing {
+	animation: pacing 10s alternate infinite;
+}
+
+@keyframes pacing {
+	0% {
+		justify-content: flex-start;
+		/* transform: translateX(0px); */
+	}
+	50% {
+		justify-content: center;
+	}
+	100% {
+		justify-content: flex-end;
+		/* transform: translateX(130px); */
+	}
 }
 
 .playing {
@@ -60,27 +87,6 @@ header {
 	100% {
 		bottom: 0px;
 	}
-}
-
-.pacing {
-	animation: pacing 3s alternate infinite;
-}
-
-@keyframes pacing {
-	0% {
-		justify-content: flex-start;
-	}
-	50% {
-		justify-content: center;
-	}
-	100% {
-		justify-content: flex-end;
-	}
-}
-
-.pet {
-	width: 30%;
-	height: 30%;
 }
 
 .sleeping {

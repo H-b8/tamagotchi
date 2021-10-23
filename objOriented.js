@@ -22,14 +22,12 @@ class Pet {
             console.log('feeding')
             this.tummy += 30;
             this.happiness += 10;
-        } else {
-
         }
 
         if (this.tummy > 100) {
+            console.log('you overfed me');
             this.energy -= 60;
             this.happiness -= 30;
-            console.log('you overfed me');
         }
 
         console.log(pet)
@@ -42,11 +40,11 @@ class Pet {
         screen.classList.remove('pacing')
         screen.classList.add('center-pet')
         petContainer.classList.add('playing')
-        
+
         this.happiness += 20;
         this.energy -= 20;
         this.tummy -= 30;
-        
+
         setTimeout(() => {
             screen.classList.remove('center-pet')
             petContainer.classList.remove('playing');
@@ -60,6 +58,7 @@ class Pet {
     sleep() {
         console.log('sleeping')
 
+        buttonContainer.classList.add('disable-buttons');
         screen.classList.remove('pacing')
         screen.classList.add('center-pet')
         petContainer.classList.add('sleeping')
@@ -71,7 +70,8 @@ class Pet {
         setTimeout(() => {
             screen.classList.remove('center-pet')
             petContainer.classList.remove('sleeping');
-            screen.classList.add('pacing')
+            screen.classList.add('pacing');
+            buttonContainer.classList.remove('disable-buttons');
         }, 9000)
 
         console.log(pet)
