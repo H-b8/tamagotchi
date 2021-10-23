@@ -1,41 +1,105 @@
 /* * * * * * * * * * INITALIZATION * * * * * * * * * */
 
-console.log('main.js connected')
+console.log('functional js connected')
 let hunger, neglect, sleepiness;
 initialize();
 
 /* * * * * * * * * CACHED ELEMENT REFERENCES * * * * * * * * */
 
+const happyStat = document.querySelector('#happy');
+const tummyStat = document.querySelector('#tummy');
+const energyStat = document.querySelector('#energy');
+const petContainer = document.querySelector('.pet-container');
+const petGraphic = document.querySelector('.pet');
+const buttonContainer = document.querySelector('.button-container');
 const feedButton = document.querySelector('#feed');
 const playButton = document.querySelector('#play');
 const sleepButton = document.querySelector('#sleep');
 
 /* * * * * * * * * * * EVENT LISTENERS * * * * * * * * * * * */
 
-feedButton.addEventListener('click', decHunger);
-playButton.addEventListener('click', decNeglect);
-sleepButton.addEventListener('click', decSleepiness);
+playButton.addEventListener('click', play);
+feedButton.addEventListener('click', feed);
+sleepButton.addEventListener('click', sleep);
 
 /* * * * * * * * * * * * * FUNCTIONS * * * * * * * * * * * * */
 
 function initialize() {
-    hunger = 50;
-    neglect = 50;
-    sleepiness = 50;
-    console.log(hunger, neglect, sleepiness)
+    happiness = Math.floor(Math.random() * 100);
+    tummy = Math.floor(Math.random() * 100);
+    energy = Math.floor(Math.random() * 100);
 }
 
-function decHunger() {
-    hunger -= 20;
-    console.log(hunger, neglect, sleepiness)
+function updateStats() {
+    happyStat.innerText = happiness;
+    tummyStat.innerText = tummy;
+    energyStat.innerText = energy;
+}
+
+function play() {
+    buttonContainer.classList.add('disable-buttons');
+    petContainer.classList.remove('pacing');
+    petContainer.classList.add('center-pet');
+    petGraphic.classList.add('playing');
+
+    happiness += 20;
+    energy -= 20;
+    tummy -= 30;
+
+    setTimeout(() => {
+        petContainer.classList.remove('center-pet')
+        petGraphic.classList.remove('playing');
+        petContainer.classList.add('pacing')
+        buttonContainer.classList.remove('disable-buttons');
+    }, 7000);
+
+    updateStats();
 };
 
-function decNeglect() {
-    neglect -= 75;
-    console.log(hunger, neglect, sleepiness)
+function feed() {
+    buttonContainer.classList.add('disable-buttons');
+    petContainer.classList.remove('pacing');
+    petContainer.classList.add('center-pet');
+    petGraphic.classList.add('eating');
+
+    if (tummy < 100) {
+        console.log('feeding');
+        tummy += 30;
+        happiness += 10;
+    }
+
+    if (tummy > 100) {
+        console.log('you overfed me');
+        energy -= 60;
+        happiness -= 30;
+    }
+
+    setTimeout(() => {
+        petContainer.classList.remove('center-pet')
+        petGraphic.classList.remove('eating');
+        petContainer.classList.add('pacing')
+        buttonContainer.classList.remove('disable-buttons');
+    }, 5000);
+
+    updateStats();
 };
 
-function decSleepiness() {
-    sleepiness -= 50;
-    console.log(hunger, neglect, sleepiness)
+function sleep() {
+    buttonContainer.classList.add('disable-buttons');
+    petContainer.classList.remove('pacing');
+    petContainer.classList.add('center-pet');
+    petGraphic.classList.add('sleeping');
+
+    energy += 40;
+    happiness += 5;
+    tummy -= 20;
+
+    setTimeout(() => {
+        petContainer.classList.remove('center-pet');
+        petGraphic.classList.remove('sleeping');
+        petContainer.classList.add('pacing');
+        buttonContainer.classList.remove('disable-buttons');
+    }, 9000);
+
+    updateStats();
 };
