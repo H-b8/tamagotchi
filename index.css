@@ -19,13 +19,6 @@ body {
 	background-color: rgb(250, 232, 238);
 }
 
-@media all and (max-width: 800px) {
-    body {
-		min-height: 0;
-		padding-top: 30%;
-	}
-}
-
 .tamagotchi-device {
 	width: 360px;
 	height: 480px;
@@ -156,4 +149,15 @@ button {
 
 .middle-button {
 	align-self: flex-end;
+}
+
+@media all and (max-width: 800px) {
+    body {
+		min-height: 0;
+		padding-top: 30%;
+	}
+
+	header {
+		font-size: 1rem;
+	}
 }
