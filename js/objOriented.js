@@ -32,7 +32,7 @@ class Pet {
 
         if (this.tummy > 99) {
             feedText.innerText = '';
-            feedButton.style.backgroundColor = 'rgb(140, 123, 252, 0.7)';
+            feedButton.style.backgroundColor = 'rgb(140, 123, 252, 0.5)';
         } else {
             feedText.innerText = 'FEED';
             feedButton.style.backgroundColor = 'rgb(140, 123, 252)';
