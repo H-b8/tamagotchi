@@ -22,14 +22,14 @@ body {
 .tamagotchi-device {
 	width: 360px;
 	height: 480px;
-	background-color: #ffd700;
 	border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	font-family: 'Syncopate', sans-serif;
+	background-color: #ffd700;
 	color: rgb(70, 152, 206);
+	font-family: 'Syncopate', sans-serif;
 }
 
 header {
@@ -134,7 +134,9 @@ p {
 	pointer-events: none;
 }
 
-
+.middle-button {
+	align-self: flex-end;
+}
 
 button {
 	width: 30px;
@@ -158,10 +160,6 @@ button {
 
 button:hover + .button-text {
 	display: block
-}
-
-.middle-button {
-	align-self: flex-end;
 }
 
 @media all and (max-width: 800px) {
