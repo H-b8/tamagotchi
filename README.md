@@ -1,5 +1,5 @@
-# MY GENERIC EGG YOLK FRIEND
-### AKA "MY GEY FRIEND." An object oriented take on the classic Tamagotchi keychain!
+# MY GENERIC EGG YOLK FRIEND (AKA "MY GEY FRIEND")
+### An object oriented take on the classic Tamagotchi keychain!
 
 - Stats are randomized on load
 - Users can feed, play with, and put their pet to bed
