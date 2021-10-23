@@ -16,7 +16,13 @@ body {
 	align-items: center;
 	min-height: 100vh;
 	margin: 0;
-	background-color: rgb(255, 227, 232);
+	background-color: rgb(250, 232, 238);
+}
+
+@media all and (max-width: 800px) {
+    body {
+		min-height: 90vh;
+	}
 }
 
 .tamagotchi-device {
