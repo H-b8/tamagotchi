@@ -66,13 +66,13 @@ function feed() {
         console.log('feeding');
         tummy += 30;
         happiness += 10;
-    }
+    };
 
     if (tummy > 100) {
         console.log('you overfed me');
         energy -= 60;
         happiness -= 30;
-    }
+    };
 
     setTimeout(() => {
         petContainer.classList.remove('center-pet')

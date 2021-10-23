@@ -1,13 +1,13 @@
 @font-face {
+	font-family: 'VCR-Mono';
+	font-style: normal;
+	font-weight: normal;
 	src: url('fonts/VCR-Mono/VCR-Mono.eot');
     src: url('fonts/VCR-Mono/VCR-Mono.eot?#iefix') format('embedded-opentype'),
 	url('fonts/VCR-Mono/VCR-Mono.woff2') format('woff2'),
 	url('fonts/VCR-Mono/VCR-Mono.woff') format('woff'),
 	url('fonts/VCR-Mono/VCR-Mono.ttf') format('truetype'),
 	url('fonts/VCR-Mono/VCR-Mono.svg#VCR-Mono') format('svg');
-    font-family: 'VCR-Mono';
-    font-weight: normal;
-    font-style: normal;
 }
 
 body {
@@ -20,16 +20,16 @@ body {
 }
 
 .tamagotchi-device {
+	border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
 	height: 480px;
 	width: 360px;
-	border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+	background-color: #ffd700;
+	color: rgb(70, 152, 206);
+	font-family: 'Syncopate', sans-serif;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: #ffd700;
-	color: rgb(70, 152, 206);
-	font-family: 'Syncopate', sans-serif;
 }
 
 header {
@@ -40,20 +40,20 @@ header {
 }
 
 .screen {
+	margin: 10px 0 30px 0;
 	height: 40%;
 	width: 50%;
-	overflow: hidden;
-	margin: 10px 0 30px 0;
 	border: 3px solid rgb(210, 0, 0);
 	border-radius: 10px;
 	padding: 10px;
+	background: #cfe4f1;
+	color: #222;
+	font-family: VCR-Mono;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	background: #cfe4f1;
-	color: #222;
-	font-family: VCR-Mono;
+	overflow: hidden;
 	transition: 1s ease-in-out;
 }
 
@@ -73,9 +73,9 @@ p {
 }
 
 .pet {
+	margin: 0;
 	height: 100%;
 	width: 40%;
-	margin: 0;
 	background-image: url('graphics/pacing.gif');
 	background-size: 100% 100%;
 	transition: 0s ease-in-out;
@@ -142,21 +142,21 @@ p {
 button {
 	height: 30px;
 	width: 30px;
-	box-shadow: 4px 4px 4px rgba(0, 0, 255, 0.1);
 	border: none;
 	border-radius: 50%;
+	box-shadow: 4px 4px 4px rgba(0, 0, 255, 0.1);
+	background-color: rgb(140, 123, 252);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: rgb(140, 123, 252);
 	cursor: pointer;
 }
 
 .button-text {
 	position: absolute;
 	margin-top: 7px;
-	display: none;
 	font-size: 0.7rem;
+	display: none;
 }
 
 button:hover + .button-text {

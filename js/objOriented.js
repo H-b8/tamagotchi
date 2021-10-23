@@ -56,13 +56,13 @@ class Pet {
             console.log('feeding');
             this.tummy += 30;
             this.happiness += 10;
-        }
+        };
 
         if (this.tummy > 100) {
             console.log('you overfed me');
             this.energy -= 60;
             this.happiness -= 30;
-        }
+        };
 
         setTimeout(() => {
             petContainer.classList.remove('center-pet')
