@@ -1,8 +1,7 @@
-console.log('obj oriented js connected');
+console.log(`connecting to your gey friend...`);
 
 /* * * * * * * * * CACHED ELEMENT REFERENCES * * * * * * * * */
 
-const time = document.querySelector('#clock')
 const happyStat = document.querySelector('#happy');
 const tummyStat = document.querySelector('#tummy');
 const energyStat = document.querySelector('#energy');
@@ -18,8 +17,9 @@ const playText = document.querySelector('#play-text');
 const sleepButton = document.querySelector('#sleep');
 
 /* * * * * * * * * * * CLASS * * * * * * * * * * * */
+
 class Pet {
-    constructor() {
+    constructor() { // creates new pet with randomized stats
         this.happiness = Math.floor(Math.random() * 100);
         this.tummy = Math.floor(Math.random() * 100);
         this.energy = Math.floor(Math.random() * 100);
@@ -46,20 +46,21 @@ class Pet {
         this.resetButtons();
         
         if (this.tummy <= 0) { // if starved
-            console.log('im getting hangry and dont want to play anymore')
+            console.log('im getting hangry and dont want to play right now')
             this.happiness -= ((-this.tummy) * 2); // decrease happiness
             this.energy -= ((-this.tummy) * 3); // decrease energy
             this.rejectPlay();
         } else if (this.tummy >= 100) { // if too full
-            console.log('im too full!')
+            console.log('im too full! lets take a nap')
             this.energy -= ((this.tummy - 100) * 3); // decrease energy
             this.rejectFood();
+            this.rejectPlay(); // only way out is to sleep it off
         }
 
         if (this.happiness <= 0) { // if depressed
-            console.log('im too sad to play or eat right now...')
-            this.rejectPlay();
+            console.log('im too sad to eat or play right now... lets take a nap')
             this.rejectFood();
+            this.rejectPlay();
         }
 
         if (this.energy <= 0) { // if no energy
@@ -74,7 +75,6 @@ class Pet {
         
         if (this.energy < 0) this.energy = 0;
         else if (this.energy > 100) this.energy = 100;
-        
 
         happyStat.innerText = this.happiness;
         tummyStat.innerText = this.tummy;
@@ -101,8 +101,8 @@ class Pet {
             petGraphic.classList.add('playing');
 
             this.happiness += Math.floor(Math.random() * 50); // increase happiness by varying amount
-            this.energy -= 20;
-            this.tummy -= 25;
+            this.energy -= 20; // decrease energy
+            this.tummy -= 25; // increase hunger
 
             setTimeout(() => {
                 petGraphic.classList.remove('playing');
@@ -114,14 +114,14 @@ class Pet {
 
     feed() {
         if (this.tummy < 100) {
-            console.log('thank u');
+            console.log('yum, thank u');
 
             this.startAction();
             petGraphic.classList.add('eating');
 
             this.happiness += Math.floor(Math.random() * 10); // increases happiness by varying amount
-            this.energy += 15;
-            this.tummy += 30;
+            this.energy += 15; // increase energy
+            this.tummy += 30; // fill up tummy
 
             setTimeout(() => {
                 petGraphic.classList.remove('eating');
@@ -132,20 +132,22 @@ class Pet {
     };
 
     sleep() {
-        console.log('goodnight');
+        console.log('goodnight! honk shoo honk shoo');
 
         this.startAction();
         petGraphic.classList.add('sleeping');
 
         let mood = Math.floor(Math.random() * 50) * (Math.round(Math.random()) ? 1 : -1);
+        let newEnergy = Math.floor(Math.random() * 30) * (mood > 0 ? 1 : -1); // if mood is lowered, so is energy
 
         this.happiness += mood; // possibility of waking up in a better or worse mood
-        this.energy += Math.floor(Math.random() * 30); // increase energy by varying amount
-        this.tummy -= Math.floor(Math.random() * 20); // increase hunger
+        this.energy += newEnergy; // possibility of waking up more or less refreshed
+        this.tummy -= Math.floor(Math.random() * 20); // increase hunger by varying amount
 
         setTimeout(() => {
             petGraphic.classList.remove('sleeping');
             this.endAction();
+            console.log(`—— woke up ${mood < 0 ? 'in a worse mood and feel even more tired' : 'feeling refreshed'}`);
             this.updateStats();
         }, 7000);
     };
